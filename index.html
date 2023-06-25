@@ -1,48 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Calendar App</title>
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-    </style>
+   <style>
+     .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.appointment-form {
+    margin-bottom: 20px;
+}
+
+.appointment-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.appointment-form input[type="date"],
+.appointment-form input[type="time"],
+.appointment-form input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.appointment-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: #f2f2f2;
+    padding: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+table td {
+    padding: 8px;
+    text-align: center;
+}
+
+table td.appointment-day {
+    background-color: #ffc107;
+}
+
+table td p {
+    margin: 0;
+}
+
+.alert {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+  </style>
 </head>
 <body>
-    <h1>Calendar App</h1>
-    <div>
-        <label for="start-date">Start Date:</label>
-        <input type="date" id="start-date">
-        <label for="start-time">Start Time:</label>
-        <input type="time" id="start-time">
-        <label for="end-date">End Date:</label>
-        <input type="date" id="end-date">
-        <label for="end-time">End Time:</label>
-        <input type="time" id="end-time">
-        <label for="description">Description:</label>
-        <input type="text" id="description">
-        <button onclick="addAppointment()">Add Appointment</button>
+    <div class="container">
+        <h1>Calendar</h1>
+        <div class="appointment-form">
+            <h2>Add Appointment</h2>
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date">
+            <label for="start-time">Start Time:</label>
+            <input type="time" id="start-time">
+            <label for="end-date">End Date:</label>
+            <input type="date" id="end-date">
+            <label for="end-time">End Time:</label>
+            <input type="time" id="end-time">
+            <label for="description">Description:</label>
+            <input type="text" id="description">
+            <button onclick="addAppointment()">Add Appointment</button>
+        </div>
+        <table id="calendar">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </div>
-    <br>
-    <table id="calendar">
-        <thead>
-            <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
 
     <script src="app.js"></script>
 </body>
